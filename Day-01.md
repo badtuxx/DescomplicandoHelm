@@ -164,6 +164,12 @@ Criando a nossa estrutura de arquivos e diretórios para o nosso chart:
 helm create giropops
 ```
 
+Instalando o comando tree para melhor visualização da estrutura de arquivos:
+
+```bash
+sudo apt-get install tree -y
+```
+
 Estrutura do chart:
 
 ```
@@ -181,12 +187,6 @@ Estrutura do chart:
     │   └── tests
     │       └── test-connection.yaml
     └── values.yaml
-```
-
-Instalando o comando tree para melhor visualização da estrutura de arquivos:
-
-```bash
-sudo apt-get install tree -y
 ```
 
 Realizando o deploy do nosso primeiro chart:
