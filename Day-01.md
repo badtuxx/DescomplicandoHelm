@@ -3,8 +3,20 @@
 ## Pre-Req
 
 - Ter um cluster Kubernetes já configurado.
+- Ter o conhecimento básico em Kubernetes e Linux
+
+## O que é o Helm
+
+O Helm é um gerenciador de pacotes criado para facilitar a instalação de aplicações e suas dependências no Kubernetes. 
+Podemos comparar o Helm com o APT do Debian, pois com apenas um comando você consegue instalar aplicações e suas dependencias no Kubernetes e ainda, fazer o gerenciamento de suas versões, podendo fazer o upgrade ou downgrade sem maiores problemas e rapidamente.
+O Helm não é somente utilizado para fazer a instalação de aplicativos de terceiros, você consegue criar `charts`, que são os pacotes que o Helm utiliza para a instalação e configuração do aplicativo no Kubernetes.
+O chart é composto por arquivos que definem como e qual deve ser o comportamento da aplicação dentro do cluster. É no chart que você define o seu deployment, o service, ingress e qualquer outra coisa necessária para a instalação e configuração da app desejada, e para isso, utilizamos os templates, que serão abordados mais para frente.
+Acho que já sabemos o que é o Helm, evidente, iremos entende-lo melhor e sua aplicação dentro da nossa realidade conforme avançamos no treinamento.
 
 ## Instalação
+
+O Helm é um bínario Go, e sua instalação é bastante simples.
+Hoje o Helm é suportado por diversos sistemas operacionais, como Linux, MacOS, BSD e Windows.
 
 Para realizar a instalação do nosso Helm, faça:
 
@@ -28,7 +40,7 @@ sudo apt-get install helm
 ### Primeiros passos com o Helm
 
 
-Verificar a versão do Helm que instalamos:
+Vamos verificar a versão do Helm que instalamos:
 
 ```bash
 helm version
