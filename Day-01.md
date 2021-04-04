@@ -60,6 +60,17 @@ Adicionando um repositório de charts:
 helm repo add stable https://charts.helm.sh/stable
 ```
 
+Após adicionar um repo, você precisa executar um update para pegar as informações mais recentes do repositório:
+
+```bash
+helm repo update
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "ingress-nginx" chart repository
+...Successfully got an update from the "jetstack" chart repository
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈Happy Helming!⎈
+```
+
 Para pesquisar os charts disponíveis em seu repositório `stable`:
 
 ```bash
@@ -78,19 +89,6 @@ Visualizar os detalhes de determinado chart:
 ```bash
 helm show chart stable/mysql
 ```
-
-
-Após adicionar um repo, você precisa executar um update para pegar as informações mais recentes do repositório:
-
-```bash
-helm repo update
-Hang tight while we grab the latest from your chart repositories...
-...Successfully got an update from the "ingress-nginx" chart repository
-...Successfully got an update from the "jetstack" chart repository
-...Successfully got an update from the "stable" chart repository
-Update Complete. ⎈Happy Helming!⎈
-```
-
 
 Deploy do nosso primeiro chart:
 
