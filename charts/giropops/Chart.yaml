@@ -2,16 +2,19 @@ apiVersion: v2
 name: giropops
 description: Primeiro chart do Nginx criado no treinamento
 type: application
-version: 0.1.1
-appVersion: "1.19.9"
+version: 0.2.0
+appVersion: "1.0.0"
 keywords:
   - nginx
   - primeira_aula
   - webserver
+  - giropops
 home: https://github.com/badtuxx/DescomplicandoHelm
 sources:
   - https://linuxtips.com.br
 maintainers:
 - name: Jeferson Fernando
   email: jeferson@linuxtips.com.br
+- name: xet
+  email: xet@streamdaLINUXtips.com
 deprecated: false

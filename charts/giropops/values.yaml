@@ -1,14 +1,14 @@
 # Default values for giropops.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-
+name: giropops
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: linuxtips/nginx-prometheus-exporter
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.19.9"
+  tag: "1.0.0"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -41,7 +41,7 @@ service:
   port: 80
 
 ingress:
-  enabled: false
+  enabled: true
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
