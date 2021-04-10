@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: giropops
+  labels:
+    app: giropops
+  namespace: default
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - name: web
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: giropops
+  sessionAffinity: None
+  type: LoadBalancer
