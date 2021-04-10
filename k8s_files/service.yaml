@@ -15,4 +15,4 @@ spec:
   selector:
     app: giropops
   sessionAffinity: None
-  type: LoadBalancer
+  type: ClusterIP

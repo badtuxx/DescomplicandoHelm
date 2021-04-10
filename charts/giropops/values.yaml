@@ -2,13 +2,13 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 name: giropops
-replicaCount: 1
+replicaCount: 5
 
 image:
   repository: linuxtips/nginx-prometheus-exporter
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0.0"
+  tag: "2.0.0"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -37,25 +37,27 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: LoadBalancer
+  type: ClusterIP
   port: 80
+  name: giropops
 
 ingress:
   enabled: true
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+    cert-manager.io/cluster-issuer: letsencrypt
   hosts:
-    - host: chart-example.local
+    - host: giropops-toskao.eastus.cloudapp.azure.com
       paths:
       - path: /
         backend:
-          serviceName: chart-example.local
+          serviceName: giropops
           servicePort: 80
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+  tls:
+  - secretName: giropops-tls
+    hosts:
+    - giropops-toskao.eastus.cloudapp.azure.com
 
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -73,7 +75,7 @@ autoscaling:
   enabled: true
   minReplicas: 3
   maxReplicas: 100
-  targetCPUUtilizationPercentage: 10
+  targetCPUUtilizationPercentage: 40
   # targetMemoryUtilizationPercentage: 80
 
 nodeSelector: {}
