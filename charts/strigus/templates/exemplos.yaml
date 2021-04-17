@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-deployment
+  namespace: {{ quote .Values.namespace }}
+data:
+{{- /*
+Essa eh a parte onde nos colocamos os comentarios,
+todos os comentarios do mundo, sem problemas!
+*/}}
+  meunome: "Jeferson Fernando"
+  time: {{ .Values.pessoa.time | quote }}
+  brasileiro: {{ .Values.pessoa.brasileiro }}
+  {{- if .Values.pessoa.brasileiro }}
+  estado: {{ .Values.pessoa.estado | nindent 4 }}
+  {{- end }}
+  siglaestado: {{ .Values.pessoa.siglaestado | upper }}
+  planeta: {{ .Values.pessoa.planeta | default "Terra" }}
+  cores: |-
+    {{- range .Values.pessoa.cores }}
+    - {{ . | quote }}
+    {{- end }}
+  
+  {{- with .Values.pessoa }}
+  cidade: {{ .cidade | default "Juquitiba" }}
+  {{- end }}
+  
+  {{- $nomedeploy := .Release.Name }}
+  deploy: {{ $nomedeploy }}
+  frasepredileta: {{ .Values.pessoa.frase | replace " " "-"}}

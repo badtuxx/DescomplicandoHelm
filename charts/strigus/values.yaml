@@ -1,0 +1,11 @@
+pessoa:
+  time: Corinthians
+  brasileiro: true
+  estado: São Paulo
+  siglaestado: sp
+  planeta: Marte
+  cores:
+    - preto
+    - branco
+    - vermelho
+  frase: "Simples como voar"
