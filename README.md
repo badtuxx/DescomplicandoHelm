@@ -1,6 +1,6 @@
-# DescomplicandoHelm
+# Descomplicando o Helm
 
-A ideia do treinamento é descomplicar a utilização do Helm e facilitar o entendimento dos Helm Chart.
+A idéia deste treinamento é descomplicar a utilização do Helm e facilitar o entendimento dos Helm Chart.
 Com isso, teremos muito mais facilidade em realizar o deploy de nossas aplicações.
 
 Esse material é aberto e desenvolvido pela comunidade LINUXtips!
