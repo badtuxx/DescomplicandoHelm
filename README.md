@@ -9,4 +9,4 @@ Treinamento e material desenvolvidos durante lives na Twitch!
 
 - Day-01 - Realizado na Twitch no dia 03/04/2021
 
-# Atualizando README
+# Atualizando README 1.0
