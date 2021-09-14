@@ -31,10 +31,12 @@ sudo apt-get install helm
 
 ### Windows
 ```bash
+choco install kubernetes-helm
 ```
 
 ### MacOS
 ```bash
+brew install helm
 ```
 
 ### Primeiros passos com o Helm
@@ -143,6 +145,33 @@ Instalando um novo exemplo de chart:
 helm install stable/minecraft --generate-name
 ```
 
+Deploy do chart:
+
+```bash
+WARNING: This chart is deprecated
+NAME: minecraft-1631584846
+LAST DEPLOYED: Tue Sep 14 02:00:50 2021
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+##############################################################################
+####   ERROR: You did not agree to the EULA in your 'helm install' call.  ####
+##############################################################################
+
+This deployment will be incomplete until you read the Minecraft EULA linked
+in the README.md, then:
+
+    helm upgrade minecraft-1631584846 \
+        --set minecraftServer.eula=true stable/minecraft
+```
+
+Neste exemplo se faz necessário aceitar a licença:
+
+```bash
+helm upgrade minecraft-1631584846 --set minecraftServer.eula=true stable/minecraft
+```
 
 Listando os charts instalados:
 
